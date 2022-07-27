@@ -1,0 +1,17 @@
+.mat-toolbar-row {
+  justify-content: space-between;
+
+  .mat-button .mat-icon:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+
+  .mat-spinner {
+    transform: scale(0.25);
+  }
+
+  .exchanges {
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+  }
+}

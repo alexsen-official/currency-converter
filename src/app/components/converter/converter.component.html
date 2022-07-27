@@ -1,0 +1,38 @@
+<mat-card>
+  <mat-card-title>Online converter</mat-card-title>
+
+  <mat-card-subtitle>
+    <span>Exchange rates fetched from </span>
+    <a href="https://exchangerate.host" target="_blank">exchangerate.host</a>
+  </mat-card-subtitle>
+
+  <mat-card-content>
+    <section>
+      <app-code-selector (onChange)="fetchExchange(buy)"
+                         [control]="fromCode"
+                         label="From">
+      </app-code-selector>
+
+      <app-currency-input (onChange)="buy()"
+                          [control]="fromAmount"
+                          [currencyCode]="fromCode.value">
+      </app-currency-input>
+    </section>
+
+    <section>
+      <app-code-selector (onChange)="fetchExchange(sell)"
+                         [control]="toCode"
+                         label="To">
+      </app-code-selector>
+
+      <app-currency-input (onChange)="sell()"
+                          [control]="toAmount"
+                          [currencyCode]="toCode.value">
+      </app-currency-input>
+    </section>
+  </mat-card-content>
+
+  <mat-card-footer *ngIf="form.disabled">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </mat-card-footer>
+</mat-card>

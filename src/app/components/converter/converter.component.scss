@@ -1,0 +1,28 @@
+.mat-card-content {
+  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  section {
+    margin-bottom: -1rem;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 548px) {
+      min-width: 100%;
+    }
+  }
+}
+
+:host::ng-deep .mat-form-field {
+  .mat-form-field-prefix {
+    top: 0;
+  }
+
+  .mat-form-field-infix {
+    padding-left: 0.25rem;
+  }
+}
+

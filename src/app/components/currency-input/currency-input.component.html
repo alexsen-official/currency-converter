@@ -1,0 +1,11 @@
+<mat-form-field appearance="outline">
+  <mat-label>Amount</mat-label>
+
+  <span matPrefix>
+    {{ getCurrencySymbol() }}
+  </span>
+
+  <input (change)="onChange.emit()"
+         [formControl]="control"
+         matInput placeholder="0.00" />
+</mat-form-field>

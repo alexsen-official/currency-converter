@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a mat-button routerLink="/">
+      <mat-icon>repeat</mat-icon>
+      <span *ngIf="title">{{ title }}</span>
+    </a>
+
+    <div class="exchanges">
+      <mat-spinner *ngIf="isLoading" color="accent"></mat-spinner>
+
+      <span *ngFor="let exchange of exchanges">
+        {{ exchange.rates.UAH | currency: exchange.base }}
+      </span>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,11 @@
+<mat-form-field appearance="outline">
+  <mat-label>{{ label }}</mat-label>
+
+  <mat-select (selectionChange)="onChange.emit()"
+              [formControl]="control">
+    <mat-option *ngFor="let code of codes"
+                [value]="code">
+      {{ code }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
